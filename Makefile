@@ -10,7 +10,7 @@ fix:
 	uv run ruff check --fix
 
 render-start:
-	uv run gunicorn task_manager.wsgi
+	gunicorn task_manager.wsgi
 
 build:
 	./build.sh
