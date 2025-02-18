@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default="your secret key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", False)
 
-ALLOWED_HOSTS = ["webserver", "127.0.0.1"]
+ALLOWED_HOSTS = ["webserver", "127.0.0.1", "python-project-52-6tqq.onrender.com"]
 
 
 # Application definition
