@@ -16,7 +16,7 @@ build:
 	./build.sh
 
 collectstatic:
-	uv run manage.py collectstatic --no-input
+	uv run python manage.py collectstatic --no-input
 
 migrate:
-	manage.py migrate
+	uv run python manage.py migrate
