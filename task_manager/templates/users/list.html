@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+
+
+
+    <h1 class="my-4">
+
+{% trans users_nav %}
+
+    </h1>
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>{% trans user_name %}</th>
+    <th>{% trans full_name %}</th>
+    <th>{% trans date_joined %}</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+
+    {% for user in users %}
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.first_name }} {{ user.last_name }}</td>
+      <td>{{ user.date_joined }}</td>
+      <td>
+        <a href="/users/1/update/">{% trans update %}</a>
+        <br>
+        <a href="/users/1/delete/">{% trans delete %}</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+
+  </div>
+{% endblock content %}
