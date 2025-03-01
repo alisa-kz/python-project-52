@@ -32,9 +32,9 @@
       <td>{{ user.first_name }} {{ user.last_name }}</td>
       <td>{{ user.date_joined }}</td>
       <td>
-        <a href="/users/1/update/">{% trans update %}</a>
+        <a href="{% url 'update_user' user.pk %}">{% trans update %}</a>
         <br>
-        <a href="/users/1/delete/">{% trans delete %}</a>
+        <a href="{% url 'delete_user' user.pk %}">{% trans delete %}</a>
       </td>
     </tr>
     {% endfor %}

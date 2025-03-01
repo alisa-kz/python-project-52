@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load i18n %}
+{% load django_bootstrap5 %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
@@ -33,6 +34,7 @@
         </ul>
       </div>
     </nav>
+{% bootstrap_messages %}
 
 {% block content %}
 {% endblock content %}

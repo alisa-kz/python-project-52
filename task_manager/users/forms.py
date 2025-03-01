@@ -1,6 +1,6 @@
 from django import forms
 from task_manager.users.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.utils.translation import gettext as _
 
 
@@ -28,17 +28,10 @@ class AddUserForm(UserCreationForm):
             "password2",
         ]
 
-    # def clean_password1(self):
-    #     password1 = self.cleaned_data.get("password1")
-    #     if len(password1) <= 3:
-    #         raise forms.ValidationError(
-    #             _("Your password must contain at least 3 characters.")
-    #         )
-    #     return password1
 
-    # def clean_password2(self):
-    #     password1 = self.cleaned_data.get("password1")
-    #     password2 = self.cleaned_data.get("password2")
-    #     if password1 != password2:
-    #         raise forms.ValidationError(_("Passwords must match."))
-    #     return password2
+class UpdateUserForm(AddUserForm):
+
+    def clean_username(self):
+        username = self.cleaned_data.get("username")
+        return username
+
