@@ -34,5 +34,6 @@ def get_context(request):
     )
     context["register"] = _("Register")
     context["login"] = _("Login")
+    context["logout"] = _("Logout")
     context["log_in"] = _("Log in")
     return context

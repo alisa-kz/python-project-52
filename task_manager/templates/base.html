@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load django_bootstrap5 %}
 {% get_current_language as LANGUAGE_CODE %}
+
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,12 +32,20 @@
               <a class="nav-link" href="/users/create/">{% trans sign_up_nav %}</a>
             </li>
 
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <input class="btn nav-link" type="submit" value="{% translate 'Logout' %}">
+            </form>
+            {% endif %}
+
+
         </ul>
       </div>
     </nav>
 {% bootstrap_messages %}
 
-{% block content %}
-{% endblock content %}
+  {% block content %}
+  {% endblock content %}
 
 </body></html>

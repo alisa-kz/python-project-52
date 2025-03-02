@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 22:10+0300\n"
+"POT-Creation-Date: 2025-03-02 23:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,11 +57,11 @@ msgstr "Имя"
 msgid "Last name"
 msgstr "Фамилия"
 
-#: task_manager/context_processors.py:19
+#: task_manager/context_processors.py:19 task_manager/users/forms.py:10
 msgid "Password"
 msgstr "Пароль"
 
-#: task_manager/context_processors.py:20
+#: task_manager/context_processors.py:20 task_manager/users/forms.py:16
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
@@ -89,11 +89,11 @@ msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_."
 
-#: task_manager/context_processors.py:30
+#: task_manager/context_processors.py:30 task_manager/users/forms.py:12
 msgid "Your password must contain at least 3 characters."
 msgstr "Ваш пароль должен содержать как минимум 3 символа."
 
-#: task_manager/context_processors.py:33
+#: task_manager/context_processors.py:33 task_manager/users/forms.py:18
 msgid "To confirm, please enter your password again."
 msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
@@ -105,10 +105,38 @@ msgstr "Зарегистрировать"
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/context_processors.py:37
+#: task_manager/context_processors.py:37 task_manager/templates/base.html:38
+msgid "Logout"
+msgstr "Выйти"
+
+#: task_manager/context_processors.py:38
 msgid "Log in"
 msgstr "Войти"
 
-#: task_manager/users/views.py:17
+#: task_manager/users/views.py:19
+msgid "You are not logged in! Please log in."
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: task_manager/users/views.py:23
+msgid "You do not have permission to modify another user."
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: task_manager/users/views.py:40
 msgid "The user has been successfully registered"
-msgstr "Пользователь был успешно зарегистрирован"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: task_manager/users/views.py:51
+msgid "User successfully updated"
+msgstr "Пользователь успешно обновлен"
+
+#: task_manager/users/views.py:61
+msgid "User successfully deleted"
+msgstr "Пользователь успешно удален"
+
+#: task_manager/views.py:16
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+#: task_manager/views.py:23
+msgid "You are logged out"
+msgstr "Вы разлогинены"
