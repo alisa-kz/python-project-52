@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 
 
 class Status(models.Model):
-    name = models.CharField(_("Name"), max_length=100, unique=True)
+    name = models.CharField(_("Name"), max_length=255, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

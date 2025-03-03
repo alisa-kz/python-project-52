@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-03 09:58+0300\n"
+"POT-Creation-Date: 2025-03-04 00:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgstr "Зарегистрировать"
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/context_processors.py:39 task_manager/templates/base.html:38
+#: task_manager/context_processors.py:39 task_manager/templates/base.html:37
 msgid "Logout"
 msgstr "Выйти"
 
@@ -129,7 +129,8 @@ msgstr "Статусы"
 msgid "Create status"
 msgstr "Создать статус"
 
-#: task_manager/context_processors.py:43
+#: task_manager/context_processors.py:43 task_manager/statuses/models.py:6
+#: task_manager/tasks/models.py:9
 msgid "Name"
 msgstr "Имя"
 
@@ -153,6 +154,32 @@ msgstr "Вы уверены, что хотите удалить"
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
+#: task_manager/context_processors.py:49
+msgid "Tasks"
+msgstr "Задачи"
+
+#: task_manager/context_processors.py:50
+msgid "Create task"
+msgstr "Создать задачу"
+
+#: task_manager/context_processors.py:51 task_manager/tasks/forms.py:12
+#: task_manager/tasks/models.py:14
+msgid "Status"
+msgstr "Статус"
+
+#: task_manager/context_processors.py:52
+msgid "Author"
+msgstr "Автор"
+
+#: task_manager/context_processors.py:53 task_manager/tasks/forms.py:17
+#: task_manager/tasks/models.py:19
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: task_manager/context_processors.py:54 task_manager/tasks/models.py:10
+msgid "Description"
+msgstr "Описание"
+
 #: task_manager/mixins.py:10
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
@@ -168,6 +195,22 @@ msgstr "Статус успешно обновлен"
 #: task_manager/statuses/views.py:44
 msgid "The status has been successfully deleted"
 msgstr "Статус успешно удален"
+
+#: task_manager/tasks/views.py:17
+msgid "Only the author can delete a task."
+msgstr "Только автор может удалить задачу"
+
+#: task_manager/tasks/views.py:34
+msgid "The task has been created"
+msgstr "Задача успешно создана"
+
+#: task_manager/tasks/views.py:42
+msgid "The task has been successfully changed"
+msgstr "Задача успешно обновлена"
+
+#: task_manager/tasks/views.py:49
+msgid "The task has been successfully deleted"
+msgstr "Задача успешно удалена"
 
 #: task_manager/users/views.py:18
 msgid "You do not have permission to modify another user."

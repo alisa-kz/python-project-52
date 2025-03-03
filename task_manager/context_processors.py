@@ -46,4 +46,10 @@ def get_context(request):
     context["delete_status"] = _("Delete status")
     context["delete_confirm"] = _("Are you sure you want to delete")
     context["yes_delete"] = _("Yes, delete")
+    context["tasks_nav"] = _("Tasks")
+    context["create_task"] = _("Create task")
+    context["status"] = _("Status")
+    context["author"] = _("Author")
+    context["executor"] = _("Executor")
+    context["description"] = _("Description")
     return context

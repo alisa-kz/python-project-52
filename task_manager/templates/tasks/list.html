@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+
+
+
+  <h1 class="my-4">
+
+{% trans tasks_nav %}
+
+  </h1>
+
+<a class="btn btn-primary mb-3" href="/tasks/create/" role="button">{% trans create_task %}</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>{% trans name %}</th>
+      <th>{% trans status %}</th>
+      <th>{% trans author %}</th>
+      <th>{% trans executor %}</th>
+      <th>{% trans date_joined %}</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+      <tr>
+        <td>{{ task.id }}</td>
+        <td>
+          <a href="{% url 'task_detail' task.pk %}">{{ task.name }}</a>
+        </td>
+        <td>{{ task.status }}</td>
+        <td>{{ task.author }}</td>
+        <td>{{ task.executor }}</td>
+        <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
+        <td>
+          <a href="{% url 'update_task' task.pk %}">{% trans update %}</a>
+          <br>
+          <a href="{% url 'delete_task' task.pk %}">{% trans delete %}</a>
+        </td>
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endblock content %}
