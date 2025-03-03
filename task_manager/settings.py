@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "task_manager",
     "task_manager.users",
+    "task_manager.statuses",
     "django_bootstrap5",
 ]
 
@@ -159,4 +160,3 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 LOGIN_REDIRECT_URL = "/"
 
 AUTH_USER_MODEL = "users.User"
-

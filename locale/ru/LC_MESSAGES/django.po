@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-02 23:02+0300\n"
+"POT-Creation-Date: 2025-03-03 09:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,38 +98,90 @@ msgid "To confirm, please enter your password again."
 msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
 #: task_manager/context_processors.py:35
+msgid "Update user"
+msgstr "Изменение пользователя"
+
+#: task_manager/context_processors.py:36
+msgid "Delete user"
+msgstr "Удаление пользователя"
+
+#: task_manager/context_processors.py:37
 msgid "Register"
 msgstr "Зарегистрировать"
 
-#: task_manager/context_processors.py:36
+#: task_manager/context_processors.py:38
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/context_processors.py:37 task_manager/templates/base.html:38
+#: task_manager/context_processors.py:39 task_manager/templates/base.html:38
 msgid "Logout"
 msgstr "Выйти"
 
-#: task_manager/context_processors.py:38
+#: task_manager/context_processors.py:40
 msgid "Log in"
 msgstr "Войти"
 
-#: task_manager/users/views.py:19
+#: task_manager/context_processors.py:41
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/context_processors.py:42
+msgid "Create status"
+msgstr "Создать статус"
+
+#: task_manager/context_processors.py:43
+msgid "Name"
+msgstr "Имя"
+
+#: task_manager/context_processors.py:44
+msgid "Create"
+msgstr "Создать"
+
+#: task_manager/context_processors.py:45
+msgid "Update status"
+msgstr "Изменить статус"
+
+#: task_manager/context_processors.py:46
+msgid "Delete status"
+msgstr "Удалить статус"
+
+#: task_manager/context_processors.py:47
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: task_manager/context_processors.py:48
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: task_manager/mixins.py:10
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/users/views.py:23
+#: task_manager/statuses/views.py:25
+msgid "The status has been successfully created"
+msgstr "Статус успешно создан"
+
+#: task_manager/statuses/views.py:35
+msgid "The status has been successfully changed"
+msgstr "Статус успешно обновлен"
+
+#: task_manager/statuses/views.py:44
+msgid "The status has been successfully deleted"
+msgstr "Статус успешно удален"
+
+#: task_manager/users/views.py:18
 msgid "You do not have permission to modify another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: task_manager/users/views.py:40
+#: task_manager/users/views.py:35
 msgid "The user has been successfully registered"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: task_manager/users/views.py:51
+#: task_manager/users/views.py:43
 msgid "User successfully updated"
 msgstr "Пользователь успешно обновлен"
 
-#: task_manager/users/views.py:61
+#: task_manager/users/views.py:50
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 

@@ -32,8 +32,18 @@ def get_context(request):
     context["confirm_password_description"] = _(
         "To confirm, please enter your password again."
     )
+    context["update_user"] = _("Update user")
+    context["delete_user"] = _("Delete user")
     context["register"] = _("Register")
     context["login"] = _("Login")
     context["logout"] = _("Logout")
     context["log_in"] = _("Log in")
+    context["statuses_nav"] = _("Statuses")
+    context["create_status"] = _("Create status")
+    context["name"] = _("Name")
+    context["create"] = _("Create")
+    context["update_status"] = _("Update status")
+    context["delete_status"] = _("Delete status")
+    context["delete_confirm"] = _("Are you sure you want to delete")
+    context["yes_delete"] = _("Yes, delete")
     return context
