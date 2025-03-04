@@ -55,4 +55,8 @@ def get_context(request):
     context["update_task"] = _("Update task")
     context["delete_task"] = _("Delete task")
     context["detail_task"] = _("Task detail")
+    context["create_label"] = _("Create label")
+    context["update_label"] = _("Update label")
+    context["delete_label"] = _("Delete label")
+    context["labels_nav"] = _("Labels")
     return context

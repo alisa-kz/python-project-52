@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-04 12:35+0300\n"
+"POT-Creation-Date: 2025-03-04 17:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,8 +129,8 @@ msgstr "Статусы"
 msgid "Create status"
 msgstr "Создать статус"
 
-#: task_manager/context_processors.py:43 task_manager/statuses/models.py:6
-#: task_manager/tasks/models.py:9
+#: task_manager/context_processors.py:43 task_manager/labels/models.py:7
+#: task_manager/statuses/models.py:6 task_manager/tasks/models.py:10
 msgid "Name"
 msgstr "Имя"
 
@@ -140,11 +140,11 @@ msgstr "Создать"
 
 #: task_manager/context_processors.py:45
 msgid "Update status"
-msgstr "Изменить статус"
+msgstr "Изменение статуса"
 
 #: task_manager/context_processors.py:46
 msgid "Delete status"
-msgstr "Удалить статус"
+msgstr "Удаление статуса"
 
 #: task_manager/context_processors.py:47
 msgid "Are you sure you want to delete"
@@ -162,8 +162,8 @@ msgstr "Задачи"
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: task_manager/context_processors.py:51 task_manager/tasks/forms.py:12
-#: task_manager/tasks/models.py:14
+#: task_manager/context_processors.py:51 task_manager/tasks/forms.py:13
+#: task_manager/tasks/models.py:15
 msgid "Status"
 msgstr "Статус"
 
@@ -171,40 +171,68 @@ msgstr "Статус"
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/context_processors.py:53 task_manager/tasks/forms.py:17
-#: task_manager/tasks/models.py:19
+#: task_manager/context_processors.py:53 task_manager/tasks/forms.py:18
+#: task_manager/tasks/models.py:20
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/context_processors.py:54 task_manager/tasks/models.py:10
+#: task_manager/context_processors.py:54 task_manager/tasks/models.py:11
 msgid "Description"
 msgstr "Описание"
 
 #: task_manager/context_processors.py:55
 msgid "Update task"
-msgstr "Изменить задачу"
+msgstr "Изменение задачи"
 
 #: task_manager/context_processors.py:56
 msgid "Delete task"
-msgstr "Удалить задачу"
+msgstr "Удаление задачи"
 
 #: task_manager/context_processors.py:57
 msgid "Task detail"
 msgstr "Просмотр задачи"
 
+#: task_manager/context_processors.py:58
+msgid "Create label"
+msgstr "Создать метку"
+
+#: task_manager/context_processors.py:59
+msgid "Update label"
+msgstr "Изменение метки"
+
+#: task_manager/context_processors.py:60
+msgid "Delete label"
+msgstr "Удаление метки"
+
+#: task_manager/context_processors.py:61 task_manager/tasks/forms.py:23
+msgid "Labels"
+msgstr "Метки"
+
+#: task_manager/labels/views.py:23
+msgid "The label has been successfully created"
+msgstr "Метка успешно создана"
+
+#: task_manager/labels/views.py:32
+msgid "The label has been successfully changed"
+msgstr "Метка успешно обновлена"
+
+#: task_manager/labels/views.py:40
+msgid "The label has been successfully deleted"
+msgstr "Метка успешно удалена"
+
 #: task_manager/mixins.py:10
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/statuses/views.py:25
+#: task_manager/statuses/views.py:24
 msgid "The status has been successfully created"
 msgstr "Статус успешно создан"
 
-#: task_manager/statuses/views.py:35
+#: task_manager/statuses/views.py:34
 msgid "The status has been successfully changed"
 msgstr "Статус успешно обновлен"
 
-#: task_manager/statuses/views.py:44
+#: task_manager/statuses/views.py:43
 msgid "The status has been successfully deleted"
 msgstr "Статус успешно удален"
 
@@ -220,7 +248,7 @@ msgstr "Задача успешно создана"
 msgid "The task has been successfully changed"
 msgstr "Задача успешно обновлена"
 
-#: task_manager/tasks/views.py:53
+#: task_manager/tasks/views.py:54
 msgid "The task has been successfully deleted"
 msgstr "Задача успешно удалена"
 

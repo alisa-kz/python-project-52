@@ -2,6 +2,7 @@ from django.db import models
 
 from task_manager.statuses.models import Status
 from task_manager.users.models import User
+from task_manager.labels.models import Label
 from django.utils.translation import gettext as _
 
 
@@ -20,9 +21,9 @@ class Task(models.Model):
         related_name="executor",
     )
     author = models.ForeignKey(
-        User, on_delete=models.PROTECT, related_name="author", 
+        User, on_delete=models.PROTECT, related_name="author",
     )
-    # labels = models.ManyToManyField(Label)
+    labels = models.ManyToManyField(Label)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

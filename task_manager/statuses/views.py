@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
