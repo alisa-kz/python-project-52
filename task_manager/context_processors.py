@@ -52,4 +52,7 @@ def get_context(request):
     context["author"] = _("Author")
     context["executor"] = _("Executor")
     context["description"] = _("Description")
+    context["update_task"] = _("Update task")
+    context["delete_task"] = _("Delete task")
+    context["detail_task"] = _("Task detail")
     return context

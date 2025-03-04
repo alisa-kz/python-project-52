@@ -33,6 +33,10 @@ class TaskCreateView(CheckAuthenticatedMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy("tasks_list")
     success_message = _("The task has been created")
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class TaskUpdateView(CheckAuthenticatedMixin, SuccessMessageMixin, UpdateView):
     model = Task
@@ -42,7 +46,8 @@ class TaskUpdateView(CheckAuthenticatedMixin, SuccessMessageMixin, UpdateView):
     success_message = _("The task has been successfully changed")
 
 
-class TaskDeleteView(CheckAuthenticatedMixin, SuccessMessageMixin, DeleteView):
+class TaskDeleteView(IsOwnerMixin, CheckAuthenticatedMixin,
+                     SuccessMessageMixin, DeleteView):
     model = Task
     template_name = "tasks/delete.html"
     success_url = reverse_lazy("tasks_list")

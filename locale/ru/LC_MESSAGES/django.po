@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-04 00:05+0300\n"
+"POT-Creation-Date: 2025-03-04 12:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,6 +180,18 @@ msgstr "Исполнитель"
 msgid "Description"
 msgstr "Описание"
 
+#: task_manager/context_processors.py:55
+msgid "Update task"
+msgstr "Изменить задачу"
+
+#: task_manager/context_processors.py:56
+msgid "Delete task"
+msgstr "Удалить задачу"
+
+#: task_manager/context_processors.py:57
+msgid "Task detail"
+msgstr "Просмотр задачи"
+
 #: task_manager/mixins.py:10
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
@@ -204,11 +216,11 @@ msgstr "Только автор может удалить задачу"
 msgid "The task has been created"
 msgstr "Задача успешно создана"
 
-#: task_manager/tasks/views.py:42
+#: task_manager/tasks/views.py:46
 msgid "The task has been successfully changed"
 msgstr "Задача успешно обновлена"
 
-#: task_manager/tasks/views.py:49
+#: task_manager/tasks/views.py:53
 msgid "The task has been successfully deleted"
 msgstr "Задача успешно удалена"
 

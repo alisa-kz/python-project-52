@@ -20,9 +20,7 @@ class Task(models.Model):
         related_name="executor",
     )
     author = models.ForeignKey(
-        User,
-        on_delete=models.PROTECT,
-        related_name="author",
+        User, on_delete=models.PROTECT, related_name="author", 
     )
     # labels = models.ManyToManyField(Label)
     created_at = models.DateTimeField(auto_now_add=True)
