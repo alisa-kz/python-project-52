@@ -9,7 +9,7 @@ def get_context(request):
     context["sign_in_nav"] = _("Sign in")
     context["sign_up_nav"] = _("Sign up")
     context["welcome"] = _("Welcome to Task Manager")
-    context["description"] = _(
+    context["welcome_description"] = _(
         """Here you can set tasks, assign performers and change their
         statuses"""
     )

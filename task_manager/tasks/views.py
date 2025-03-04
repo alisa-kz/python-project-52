@@ -29,7 +29,7 @@ class TaskListView(CheckAuthenticatedMixin, ListView):
 class TaskCreateView(CheckAuthenticatedMixin, SuccessMessageMixin, CreateView):
     model = Task
     template_name = "tasks/create.html"
-    fields = ["name", "description", "status", "executor"]
+    fields = ["name", "description", "status", "executor", "labels"]
     success_url = reverse_lazy("tasks_list")
     success_message = _("The task has been created")
 
@@ -40,7 +40,7 @@ class TaskCreateView(CheckAuthenticatedMixin, SuccessMessageMixin, CreateView):
 
 class TaskUpdateView(CheckAuthenticatedMixin, SuccessMessageMixin, UpdateView):
     model = Task
-    fields = ["name", "description", "status", "executor"]
+    fields = ["name", "description", "status", "executor", "labels"]
     template_name = "tasks/update.html"
     success_url = reverse_lazy("tasks_list")
     success_message = _("The task has been successfully changed")

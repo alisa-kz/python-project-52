@@ -21,8 +21,6 @@ class AddTaskForm(forms.ModelForm):
     labels = forms.ModelMultipleChoiceField(
         queryset=Label.objects.all(),
         label=_("Labels"),
-        # widget=forms.SelectMultiple(),
-        # required=False,
     )
 
     class Meta:

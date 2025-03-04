@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -38,3 +39,13 @@ class LabelDeleteView(CheckAuthenticatedMixin,
     template_name = "labels/delete.html"
     success_url = reverse_lazy("labels_list")
     success_message = _("The label has been successfully deleted")
+
+    def post(self, request, *args, **kwargs):
+        if self.get_object().task_set.exists():
+            messages.error(
+                request, _(
+                    "Unable to delete a label because it is being used"
+                    )
+            )
+            return redirect(self.success_url)
+        return super().post(request, *args, **kwargs)

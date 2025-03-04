@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-04 17:17+0300\n"
+"POT-Creation-Date: 2025-03-04 18:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgstr "Зарегистрировать"
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/context_processors.py:39 task_manager/templates/base.html:37
+#: task_manager/context_processors.py:39 task_manager/templates/base.html:40
 msgid "Logout"
 msgstr "Выйти"
 
@@ -205,36 +205,45 @@ msgid "Delete label"
 msgstr "Удаление метки"
 
 #: task_manager/context_processors.py:61 task_manager/tasks/forms.py:23
+#: task_manager/tasks/models.py:26
 msgid "Labels"
 msgstr "Метки"
 
-#: task_manager/labels/views.py:23
+#: task_manager/labels/views.py:24
 msgid "The label has been successfully created"
 msgstr "Метка успешно создана"
 
-#: task_manager/labels/views.py:32
+#: task_manager/labels/views.py:33
 msgid "The label has been successfully changed"
 msgstr "Метка успешно обновлена"
 
-#: task_manager/labels/views.py:40
+#: task_manager/labels/views.py:41
 msgid "The label has been successfully deleted"
 msgstr "Метка успешно удалена"
+
+#: task_manager/labels/views.py:47
+msgid "Unable to delete a label because it is being used"
+msgstr "Невозможно удалить метку, потому что она используется"
 
 #: task_manager/mixins.py:10
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/statuses/views.py:24
+#: task_manager/statuses/views.py:26
 msgid "The status has been successfully created"
 msgstr "Статус успешно создан"
 
-#: task_manager/statuses/views.py:34
+#: task_manager/statuses/views.py:36
 msgid "The status has been successfully changed"
 msgstr "Статус успешно обновлен"
 
-#: task_manager/statuses/views.py:43
+#: task_manager/statuses/views.py:45
 msgid "The status has been successfully deleted"
 msgstr "Статус успешно удален"
+
+#: task_manager/statuses/views.py:53
+msgid "Unable to delete a status because it is being used"
+msgstr "Невозможно удалить статус, потому что он используется"
 
 #: task_manager/tasks/views.py:17
 msgid "Only the author can delete a task."
