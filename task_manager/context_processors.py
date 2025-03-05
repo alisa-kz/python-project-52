@@ -59,4 +59,5 @@ def get_context(request):
     context["update_label"] = _("Update label")
     context["delete_label"] = _("Delete label")
     context["labels_nav"] = _("Labels")
+    context["show"] = _("Show")
     return context

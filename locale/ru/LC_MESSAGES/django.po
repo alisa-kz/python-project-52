@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-04 18:46+0300\n"
+"POT-Creation-Date: 2025-03-05 12:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,8 +162,8 @@ msgstr "Задачи"
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: task_manager/context_processors.py:51 task_manager/tasks/forms.py:13
-#: task_manager/tasks/models.py:15
+#: task_manager/context_processors.py:51 task_manager/tasks/forms.py:16
+#: task_manager/tasks/forms.py:37 task_manager/tasks/models.py:15
 msgid "Status"
 msgstr "Статус"
 
@@ -171,8 +171,8 @@ msgstr "Статус"
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/context_processors.py:53 task_manager/tasks/forms.py:18
-#: task_manager/tasks/models.py:20
+#: task_manager/context_processors.py:53 task_manager/tasks/forms.py:21
+#: task_manager/tasks/forms.py:42 task_manager/tasks/models.py:20
 msgid "Executor"
 msgstr "Исполнитель"
 
@@ -204,10 +204,14 @@ msgstr "Изменение метки"
 msgid "Delete label"
 msgstr "Удаление метки"
 
-#: task_manager/context_processors.py:61 task_manager/tasks/forms.py:23
+#: task_manager/context_processors.py:61 task_manager/tasks/forms.py:26
 #: task_manager/tasks/models.py:26
 msgid "Labels"
 msgstr "Метки"
+
+#: task_manager/context_processors.py:62
+msgid "Show"
+msgstr "Показать"
 
 #: task_manager/labels/views.py:24
 msgid "The label has been successfully created"
@@ -245,19 +249,27 @@ msgstr "Статус успешно удален"
 msgid "Unable to delete a status because it is being used"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: task_manager/tasks/views.py:17
+#: task_manager/tasks/forms.py:47
+msgid "Label"
+msgstr "Метка"
+
+#: task_manager/tasks/forms.py:54
+msgid "Only your own tasks"
+msgstr "Только свои задачи"
+
+#: task_manager/tasks/views.py:22
 msgid "Only the author can delete a task."
 msgstr "Только автор может удалить задачу"
 
-#: task_manager/tasks/views.py:34
+#: task_manager/tasks/views.py:40
 msgid "The task has been created"
 msgstr "Задача успешно создана"
 
-#: task_manager/tasks/views.py:46
+#: task_manager/tasks/views.py:52
 msgid "The task has been successfully changed"
 msgstr "Задача успешно обновлена"
 
-#: task_manager/tasks/views.py:54
+#: task_manager/tasks/views.py:60
 msgid "The task has been successfully deleted"
 msgstr "Задача успешно удалена"
 

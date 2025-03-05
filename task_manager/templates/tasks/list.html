@@ -16,6 +16,18 @@
 
 <a class="btn btn-primary mb-3" href="/tasks/create/" role="button">{% trans create_task %}</a>
 
+<div class="card mb-3">
+  <div class="card-body bg-light">
+      <form class="form-inline center" method="get">
+          {% bootstrap_field filter.form.status%}
+          {% bootstrap_field filter.form.executor%}
+          {% bootstrap_field filter.form.labels%}
+          {% bootstrap_field filter.form.self_tasks%}
+          <input class="btn btn-primary" type="submit" value="{% trans show %}">
+      </form>
+  </div>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>

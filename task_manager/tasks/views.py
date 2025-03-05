@@ -2,11 +2,12 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, DetailView, UpdateView, ListView
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+from django_filters.views import FilterView
 from django.utils.translation import gettext as _
 
 from task_manager.mixins import CheckAuthenticatedMixin
-from task_manager.tasks.forms import AddTaskForm
+from task_manager.tasks.forms import FilterTaskForm
 from task_manager.tasks.models import Task
 
 
@@ -19,11 +20,12 @@ class IsOwnerMixin(CheckAuthenticatedMixin):
         return super().dispatch(request, *args, **kwargs)
 
 
-class TaskListView(CheckAuthenticatedMixin, ListView):
+class TaskListView(CheckAuthenticatedMixin, FilterView):
     model = Task
     fields = "__all__"
     template_name = "tasks/list.html"
     context_object_name = "tasks"
+    filterset_class = FilterTaskForm
 
 
 class TaskCreateView(CheckAuthenticatedMixin, SuccessMessageMixin, CreateView):
