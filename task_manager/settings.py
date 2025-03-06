@@ -60,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "rollbar.contrib.django.middleware.RollbarNotifierMiddleware",
 ]
 
 ROOT_URLCONF = "task_manager.urls"
@@ -163,3 +164,10 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 LOGIN_REDIRECT_URL = "/"
 
 AUTH_USER_MODEL = "users.User"
+
+ROLLBAR = {
+    "access_token": os.getenv("ACCESS_TOKEN"),
+    "environment": "development" if DEBUG else "production",
+    "code_version": "1.0",
+    "root": BASE_DIR,
+}
