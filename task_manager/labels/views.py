@@ -3,10 +3,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
-from task_manager.mixins import CheckAuthenticatedMixin
 from task_manager.labels.models import Label
+from task_manager.mixins import CheckAuthenticatedMixin
 
 
 class LabelListView(CheckAuthenticatedMixin, ListView):

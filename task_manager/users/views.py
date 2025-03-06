@@ -1,12 +1,13 @@
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.contrib import messages
-from task_manager.users.models import User
-from task_manager.users.forms import AddUserForm, UpdateUserForm
-from task_manager.mixins import CheckAuthenticatedMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from django.shortcuts import redirect
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+
+from task_manager.mixins import CheckAuthenticatedMixin
+from task_manager.users.forms import AddUserForm, UpdateUserForm
+from task_manager.users.models import User
 
 
 class IsOwnerMixin(CheckAuthenticatedMixin):

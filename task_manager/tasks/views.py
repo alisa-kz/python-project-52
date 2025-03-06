@@ -2,9 +2,9 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from django_filters.views import FilterView
-from django.utils.translation import gettext as _
 
 from task_manager.mixins import CheckAuthenticatedMixin
 from task_manager.tasks.forms import FilterTaskForm

@@ -1,7 +1,8 @@
-from django.forms import CharField, PasswordInput
-from task_manager.users.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import CharField, PasswordInput
 from django.utils.translation import gettext as _
+
+from task_manager.users.models import User
 
 
 class AddUserForm(UserCreationForm):
