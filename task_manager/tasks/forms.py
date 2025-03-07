@@ -21,13 +21,11 @@ class AddTaskForm(ModelForm):
     )
 
     executor = ModelChoiceField(
-        queryset=User.objects.all(),
-        label=_("Executor"),
+        queryset=User.objects.all(), label=_("Executor")
     )
 
     labels = ModelMultipleChoiceField(
-        queryset=Label.objects.all(),
-        label=_("Labels"),
+        queryset=Label.objects.all(), label=_("Labels"), required=False
     )
 
     class Meta:
