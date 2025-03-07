@@ -259,7 +259,7 @@ msgstr "Только свои задачи"
 
 #: task_manager/tasks/views.py:22
 msgid "Only the author can delete a task."
-msgstr "Только автор может удалить задачу"
+msgstr "Задачу может удалить только ее автор"
 
 #: task_manager/tasks/views.py:40
 msgid "The task has been created"
