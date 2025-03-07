@@ -115,7 +115,7 @@ msgstr "Вход"
 
 #: task_manager/context_processors.py:39 task_manager/templates/base.html:40
 msgid "Logout"
-msgstr "Выйти"
+msgstr "Выход"
 
 #: task_manager/context_processors.py:40
 msgid "Log in"
