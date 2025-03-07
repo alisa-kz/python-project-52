@@ -101,9 +101,10 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+database_url = os.getenv("DATABASE_URL")
 
-if os.getenv("DATABASE_URL"):
-    DATABASES = {"default": dj_database_url.config(conn_max_age=600)}
+if database_url:
+    DATABASES = {"default": dj_database_url.parse(database_url)}
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
