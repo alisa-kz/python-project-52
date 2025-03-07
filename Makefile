@@ -20,3 +20,10 @@ collectstatic:
 
 migrate:
 	uv run python manage.py migrate
+
+test:
+	uv run ./manage.py test
+
+test-coverage:
+	uv run coverage run --source='.' manage.py test
+	uv run coverage xml
