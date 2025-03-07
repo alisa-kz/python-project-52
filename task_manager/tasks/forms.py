@@ -3,7 +3,6 @@ from django.forms import (
     ModelChoiceField,
     ModelForm,
     ModelMultipleChoiceField,
-    SelectMultiple,
 )
 from django.utils.translation import gettext as _
 from django_filters.filters import BooleanFilter, ModelChoiceFilter
