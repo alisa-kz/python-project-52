@@ -219,7 +219,7 @@ msgstr "Метка успешно создана"
 
 #: task_manager/labels/views.py:33
 msgid "The label has been successfully changed"
-msgstr "Метка успешно обновлена"
+msgstr "Метка успешно изменена"
 
 #: task_manager/labels/views.py:41
 msgid "The label has been successfully deleted"
@@ -239,7 +239,7 @@ msgstr "Статус успешно создан"
 
 #: task_manager/statuses/views.py:36
 msgid "The status has been successfully changed"
-msgstr "Статус успешно обновлен"
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:45
 msgid "The status has been successfully deleted"
@@ -267,7 +267,7 @@ msgstr "Задача успешно создана"
 
 #: task_manager/tasks/views.py:52
 msgid "The task has been successfully changed"
-msgstr "Задача успешно обновлена"
+msgstr "Задача успешно изменена"
 
 #: task_manager/tasks/views.py:60
 msgid "The task has been successfully deleted"
@@ -283,7 +283,7 @@ msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:43
 msgid "User successfully updated"
-msgstr "Пользователь успешно обновлен"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:50
 msgid "User successfully deleted"
