@@ -3,6 +3,7 @@ from django.forms import (
     ModelChoiceField,
     ModelForm,
     ModelMultipleChoiceField,
+    SelectMultiple,
 )
 from django.utils.translation import gettext as _
 from django_filters.filters import BooleanFilter, ModelChoiceFilter
@@ -25,7 +26,8 @@ class AddTaskForm(ModelForm):
     )
 
     labels = ModelMultipleChoiceField(
-        queryset=Label.objects.all(), label=_("Labels"), required=False
+        queryset=Label.objects.all(),
+        label=_("Labels"),
     )
 
     class Meta:

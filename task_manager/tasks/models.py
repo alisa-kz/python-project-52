@@ -23,7 +23,9 @@ class Task(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name="author",
     )
-    labels = models.ManyToManyField(Label, verbose_name=_("Labels"))
+    labels = models.ManyToManyField(
+        Label, verbose_name=_("Labels"), blank=True
+        )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

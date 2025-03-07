@@ -14,7 +14,7 @@ from task_manager.tasks.models import Task
 class IsOwnerMixin(CheckAuthenticatedMixin):
 
     def dispatch(self, request, *args, **kwargs):
-        if self.get_object() != self.request.user:
+        if self.get_object().author != request.user:
             messages.error(request, _("Only the author can delete a task."))
             return redirect("tasks_list")
         return super().dispatch(request, *args, **kwargs)
