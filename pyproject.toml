@@ -15,9 +15,15 @@ dependencies = [
     "django-filter>=25.1",
     "rollbar>=1.2.0",
     "coverage>=7.6.12",
+    "pytest-django>=4.10.0",
 ]
 
 [dependency-groups]
 dev = [
     "ruff>=0.9.6",
 ]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "task_manager.settings"
+# -- recommended but optional:
+python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
