@@ -27,3 +27,6 @@ test:
 test-coverage:
 	uv run coverage run --source='.' manage.py test
 	uv run coverage xml
+
+runserver:
+	uv run python manage.py runserver

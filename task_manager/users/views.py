@@ -1,26 +1,11 @@
-from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
-from task_manager.mixins import CheckAuthenticatedMixin
 from task_manager.users.forms import AddUserForm, UpdateUserForm
+from task_manager.users.mixins import IsOwnerMixin
 from task_manager.users.models import User
-
-
-class IsOwnerMixin(CheckAuthenticatedMixin):
-
-    def dispatch(self, request, *args, **kwargs):
-        if self.get_object() != self.request.user:
-            messages.error(
-                request, _(
-                    "You do not have permission to modify another user."
-                    )
-            )
-            return redirect("users_list")
-        return super().dispatch(request, *args, **kwargs)
 
 
 class UserListView(ListView):

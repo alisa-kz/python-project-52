@@ -1,6 +1,4 @@
-from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
@@ -8,16 +6,8 @@ from django_filters.views import FilterView
 
 from task_manager.mixins import CheckAuthenticatedMixin
 from task_manager.tasks.forms import FilterTaskForm
+from task_manager.tasks.mixins import IsOwnerMixin
 from task_manager.tasks.models import Task
-
-
-class IsOwnerMixin(CheckAuthenticatedMixin):
-
-    def dispatch(self, request, *args, **kwargs):
-        if self.get_object().author != request.user:
-            messages.error(request, _("Only the author can delete a task."))
-            return redirect("tasks_list")
-        return super().dispatch(request, *args, **kwargs)
 
 
 class TaskListView(CheckAuthenticatedMixin, FilterView):

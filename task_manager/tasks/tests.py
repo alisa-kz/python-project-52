@@ -1,86 +1,29 @@
+import json
+
 from django.test import TestCase
 from django.urls import reverse
 
 from task_manager.tasks.models import Task
+from task_manager.users.models import User
 
 
 class TestTask(TestCase):
+    fixtures = ["users.json", "tasks.json", "statuses.json", "labels.json"]
 
     def test_create_task(self):
-        user_data = {
-            "first_name": "Tom",
-            "last_name": "Smith",
-            "username": "TomSm",
-            "password1": "1234",
-            "password2": "1234",
-        }
-        self.client.post(reverse("create_user"), user_data)
-        self.client.login(username=user_data["username"], password="1234")
-        self.client.post(reverse("create_status"), {"name": "MyStatus"})
-        self.client.post(reverse("create_label"), {"name": "MyLabel"})
-        task_data = {
-            "name": "MyTask",
-            "description": "SoImportantTask",
-            "status": "1",
-            "executor": "1",
-            "labels": "1",
-        }
-        self.client.post(reverse("create_task"), task_data)
-        self.assertTrue(Task.objects.filter(name=task_data["name"]).exists())
+        user = User.objects.get(username="TomSm")
+        self.client.login(username=user.username, password="1234")
+        with open("task_manager/fixtures/task_data.json", "r") as f:
+            data = json.load(f)
+            self.client.post(reverse("create_task"), data[0])
+            self.assertTrue(Task.objects.filter(name=data[0]["name"]).exists())
 
     def test_update_task(self):
-        user_data = {
-            "first_name": "Tom",
-            "last_name": "Smith",
-            "username": "TomSm",
-            "password1": "1234",
-            "password2": "1234",
-        }
-        self.client.post(reverse("create_user"), user_data)
-        self.client.login(username=user_data["username"], password="1234")
-        self.client.post(reverse("create_status"), {"name": "MyStatus"})
-        self.client.post(reverse("create_label"), {"name": "MyLabel"})
-        task_data = {
-            "name": "MyTask",
-            "description": "SoImportantTask",
-            "status": "1",
-            "executor": "1",
-            "labels": "1",
-        }
-        self.client.post(reverse("create_task"), task_data)
+        user = User.objects.get(username="TomSm")
+        self.client.login(username=user.username, password="1234")
         task = Task.objects.get(name="MyTask")
-        update_data = {
-            "name": "MyTask",
-            "description": "NotSoImportantTask",
-            "status": "1",
-            "executor": "1",
-            "labels": "1",
-        }
-        self.client.post(reverse("update_task", args="1"), update_data)
-        task.refresh_from_db()
-        self.assertEqual(task.description, update_data["description"])
-
-    # def test_delete_task(self):
-    #     user_data = {
-    #         "first_name": "Tom",
-    #         "last_name": "Smith",
-    #         "username": "TomSm",
-    #         "password1": "1234",
-    #         "password2": "1234",
-    #     }
-    #     self.client.post(reverse("create_user"), user_data)
-    #     self.client.login(username=user_data["username"], password="1234")
-    #     self.client.post(reverse("create_status"), {"name": "MyStatus"})
-    #     self.client.post(reverse("create_label"), {"name": "MyLabel"})
-    #     task_data = {
-    #         "name": "MyTask",
-    #         "description": "SoImportantTask",
-    #         "status": "1",
-    #         "executor": "1",
-    #         "labels": "1",
-    #     }
-    #     self.client.post(reverse("create_task"), task_data)
-    #     task = Task.objects.get(name="MyTask")
-    #     print(self.client)
-    #     self.client.post(reverse("delete_task", args="1"))
-    #     self.assertFalse(Task.objects.filter(id="1").exists())
+        with open("task_manager/fixtures/task_data.json", "r") as f:
+            data = json.load(f)
+            self.client.post(reverse("update_task", args=[task.pk]), data[1])
+            task.refresh_from_db()
+            self.assertEqual(task.description, data[1]["description"])
