@@ -1,24 +1,4 @@
-{% extends 'base.html' %}
-
+{% extends 'base_delete.html' %}
 {% load i18n %}
-{% load django_bootstrap5 %}
-
-{% block content %}
-<div class="container wrapper flex-grow-1">
-
-
-
-    <h1 class="my-4">
-
-{% trans delete_task %}
-
-    </h1>
-
-<p>{% trans delete_confirm %} {{ task.name }}?</p>
-<form method="post">
-    {% csrf_token %}
-<input class="btn btn-danger" type="submit" value="{% trans yes_delete %}">
-</form>
-
-  </div>
-{% endblock content %}
+{% block heading %}{% trans delete_task %}{% endblock %}
+{% block name %}{{ task.name }}{% endblock %}

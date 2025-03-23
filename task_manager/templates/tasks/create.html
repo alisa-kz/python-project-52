@@ -1,25 +1,4 @@
-{% extends 'base.html' %}
-
+{% extends 'base_create.html' %}
 {% load i18n %}
-{% load django_bootstrap5 %}
-
-{% block content %}
-
-<div class="container wrapper flex-grow-1">
-
-
-
-  <h1 class="my-4">
-
-{% trans create_task %}
-
-  </h1>
-
-<form method="post">
-  {% csrf_token %}
-  {% bootstrap_form form %}
-<input class="btn btn-primary" type="submit" value={% trans create %}>
-</form>
-
-</div>
-{% endblock content %}
+{% block heading %}{% trans create_task %}{% endblock %}
+{% block submit_name %}{% trans create %}{% endblock %}

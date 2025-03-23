@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+
+
+
+    <h1 class="my-4">
+
+    {% block heading %}{% endblock %}
+
+    </h1>
+
+<p>{% trans delete_confirm %} {% block name %}{% endblock %}?</p>
+<form method="post">
+    {% csrf_token %}
+<input class="btn btn-danger" type="submit" value="{% trans yes_delete %}">
+</form>
+
+  </div>
+{% endblock content %}
